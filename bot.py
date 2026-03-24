@@ -3,6 +3,8 @@ from discord.ext import commands
 import asyncio
 import json
 import os
+from keep_alive import keep_alive
+keep_alive()
  
 # ======================
 # ตั้งค่า Bot
@@ -366,6 +368,6 @@ async def on_ready():
 # RUN
 async def main():
     async with bot:
-        await bot.start(os.getenv("TOKEN"))
+        await bot.start(os.getenv("DISCORD_TOKEN"))
 
 asyncio.run(main())
