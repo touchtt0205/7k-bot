@@ -364,4 +364,8 @@ async def on_ready():
  
 # ======================
 # RUN
-bot.run(os.getenv("TOKEN"))
+async def main():
+    async with bot:
+        await bot.start(os.getenv("TOKEN"))
+
+asyncio.run(main())
